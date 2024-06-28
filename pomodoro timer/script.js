@@ -105,6 +105,8 @@ const songs = [
         src: 'song/shiloh rain + thunder.mp3',
         thumbnail: 'songs-thumbnails/shiloh rain + thunder.png'  
     }
+
+    // Add more songs
 ];
 
 let currentSongIndex = 0;
