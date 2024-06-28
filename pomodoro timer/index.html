@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Date Display Card -->
+    <div class="date-card">
+        <div id="current-date"></div>
+    </div>
+
+    <!-- Timer Card -->
+    <div class="timer-card">
+        <div class="pomodoro-container">
+            <div class="button-set-1">
+                <span class="pomodoro type-active" onclick="pomodoroTimer()">Pomodoro</span>
+                <span class="short-break" onclick="shortBreakTimer()">Short Break</span>
+                <span class="long-break" onclick="longBreakTimer()">Long Break</span>
+            </div>
+            <div class="timer">25:00</div>
+            <div class="button-set-2">
+                <span class="button start" onclick="startPauseFunction()">Start</span>
+                <span class="button reset" onclick="resetTimer()">Reset</span>
+                <span class="button settings" onclick="openSettings()">Settings</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Music Player Card -->
+    <div class="music-player-card">
+        <div class="music-player">
+            <div class="thumb">
+                <img src="" alt="Song Thumbnail" class="song-thumb">
+            </div>
+            <div class="song-info">
+                <div class="song-title">Select a Song</div>
+                <div class="song-artist">Artist</div>
+                <div class="progress-container">
+                    <div class="progress"></div>
+                </div>
+                <div class="time-container">
+                    <span class="current-time">00:00</span>
+                    <span class="duration">00:00</span>
+                </div>
+            </div>
+            <div class="song-controller">
+                <div class="button previous" onclick="playPreviousSong()"><i class="fas fa-backward"></i></div>
+                <div class="button play-pause" onclick="togglePlayPause()"><i class="fas fa-play"></i></div>
+                <div class="button next" onclick="playNextSong()"><i class="fas fa-forward"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSettingsModal()">&times;</span>
+            <h2>Change Background Color</h2>
+            <div class="color-options">
+                <div class="color-option" style="background-color: #ffffff;" onclick="changeBackgroundColor('#ffffff')"></div>
+                <div class="color-option" style="background-color: #f0f0f0;" onclick="changeBackgroundColor('#f0f0f0')"></div>
+                <div class="color-option" style="background-color: #e0e0e0;" onclick="changeBackgroundColor('#e0e0e0')"></div>
+                <div class="color-option" style="background-color: #d3d3d3;" onclick="changeBackgroundColor('#d3d3d3')"></div>
+                <div class="color-option" style="background-color: #ffcccb;" onclick="changeBackgroundColor('#ffcccb')"></div>
+                <div class="color-option" style="background-color: #ffc0cb;" onclick="changeBackgroundColor('#ffc0cb')"></div>
+                <div class="color-option" style="background-color: #ffb6c1;" onclick="changeBackgroundColor('#ffb6c1')"></div>
+                <div class="color-option" style="background-color: #ff69b4;" onclick="changeBackgroundColor('#ff69b4')"></div>
+                <div class="color-option" style="background-color: #ff1493;" onclick="changeBackgroundColor('#ff1493')"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- To-Do List Section -->
+    <div class="todo-list-card">
+        <h2>To-Do List</h2>
+        <div class="todo-input-container">
+            <input type="text" id="todoInput" placeholder="Add new task...">
+            <button onclick="addTodo()">Add</button>
+        </div>
+        <div class="todo-list-container">
+            <ul id="todoList" class="todo-list"></ul>
+        </div>
+    </div>
+
+    <!-- Daily Progress Card -->
+    <div class="progress-card">
+        <h2>Daily Progress</h2>
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div id="progressPercentage">0%</div>
+    </div>
+
+    <!-- Font Awesome Kit -->
+    <script src="https://kit.fontawesome.com/031ed58609.js" crossorigin="anonymous"></script>
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+</body>
+</html>

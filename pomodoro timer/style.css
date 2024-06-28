@@ -1,0 +1,369 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.date-card {
+    position: fixed;
+    top: 20px;
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+}
+
+#current-date {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.timer-card {
+    width: 70%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pomodoro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-set-1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.button-set-1 span {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.button-set-1 span.type-active {
+    background-color: #a9a7af;
+    color: #ffffff;
+}
+
+.timer {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.button-set-2 {
+    display: flex;
+    justify-content: center;
+}
+
+.button-set-2 .button {
+    cursor: pointer;
+    padding: 12px 24px;
+    border-radius: 30px;
+    margin: 0 10px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: none;
+    background-color: #2196f3;
+    color: #ffffff;
+}
+
+.button-set-2 .button:hover {
+    background-color: #0b7dda;
+}
+
+.music-player-card {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 220px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.music-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.thumb {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.song-thumb {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.song-info {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.song-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.song-artist {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.song-controller .play-pause {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: none;
+    background-color: #2196f3;
+    color: #ffffff;
+}
+
+.song-controller .play-pause:hover {
+    background-color: #0b7dda;
+}
+
+.song-controller .play-pause i {
+    font-size: 1.2rem;
+}
+
+.song-controller .play-pause.playing i:before {
+    content: "\f28c"; /* Pause icon */
+}
+
+
+.progress-container {
+    width: 200px;
+    height: 5px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress {
+    width: 0;
+    height: 100%;
+    background-color: #2196f3;
+    transition: width 0.5s ease-in-out;
+}
+
+.time-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.song-controller {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: none;
+    margin: 0 5px;
+}
+
+.button:hover {
+    background-color: #f0f0f0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.color-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.color-option {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+.todo-list-card {
+    width: 300px;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.todo-input-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#todoInput {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #2196f3;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0b7dda;
+}
+
+.todo-list-container {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.todo-item.completed {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.todo-item button {
+    background-color: transparent;
+    color: #2196f3;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
+.todo-item button:hover {
+    color: #0b7dda;
+}
+
+.progress-card {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 200px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: right;
+    z-index: 1000;
+    font-size: 0.9rem;
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 5px;
+    height: 15px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.5s ease-in-out;
+}
+
+#progressPercentage {
+    font-size: 1rem;
+}
